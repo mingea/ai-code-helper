@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: ai-code-helper
+  profiles:
+    active: local
+
+server:
+  port: 8080
+
+# API配置模板 - 实际密钥在 application-local.yml 中配置
+langchain4j:
+  anthropic:
+    chat-model:
+      api-key: ${ANTHROPIC_API_KEY:your-api-key-here}
+      model-name: claude-haiku-4-5-20251001
+      base-url: ${ANTHROPIC_BASE_URL:https://api.anthropic.com/v1}
+    streaming-chat-model:
+      api-key: ${ANTHROPIC_API_KEY:your-api-key-here}
+      model-name: claude-haiku-4-5-20251001
+      base-url: ${ANTHROPIC_BASE_URL:https://api.anthropic.com/v1}
